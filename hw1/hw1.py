@@ -69,7 +69,7 @@ def main():
 
         forecast = simulate_weather(init_state, INIT_PREVIOUS_YEAR_FORECASTS) # Get previous year's forecast
 
-        # Init transition counts
+        # Collect transition counts
         transition_counts = {state: {next_state: 0 for next_state in WEATHER_STATES} for state in WEATHER_STATES}
 
         # Count transitions
@@ -85,11 +85,13 @@ def main():
 
             if total_transitions > 0:
 
+                # Add to the new transition dictionary
                 transition_probabilities[state] = {
                     next_state: count / total_transitions
                     for next_state, count in transitions.items()
                 }
             else:
+                
                 # Default if no transitions
                 transition_probabilities[state] = {
                     next_state: 1 / len(WEATHER_STATES) for next_state in WEATHER_STATES
