@@ -7,7 +7,13 @@
 * April 5, 2025     *
 * ----------------- *
 
-Forecast the next 5 days of weather using an RNN.
+Forecasts the temperature in Fort Myers, FL over the next
+5 days using and RNN. Reads input from 'fm-march-weather.csv'
+and extracts the features: 
+ - Temperature Avg (°F)
+ - Dew Point Avg (°F)
+ - Humidity Avg (%)
+to train and test the data to predict the temperature.
 '''
 
 import pandas as pd
